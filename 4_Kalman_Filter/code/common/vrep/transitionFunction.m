@@ -24,10 +24,8 @@ function [f, F_x, F_u] = transitionFunction(x, u, l)
 
     % Jacobian with respect to the inputs
     F_u = [
-        0.5 * cos(theta + delta_theta / 2) - (delta_theta / (2 * l)) * sin(theta + delta_theta / 2), ...
-        0.5 * cos(theta + delta_theta / 2) + (delta_theta / (2 * l)) * sin(theta + delta_theta / 2);
-        0.5 * sin(theta + delta_theta / 2) + (delta_theta / (2 * l)) * cos(theta + delta_theta / 2), ...
-        0.5 * sin(theta + delta_theta / 2) - (delta_theta / (2 * l)) * cos(theta + delta_theta / 2);
+        0.5 * cos(theta + delta_theta / 2), 0.5 * cos(theta + delta_theta / 2);
+        0.5 * sin(theta + delta_theta / 2), 0.5 * sin(theta + delta_theta / 2);
         -1 / l, 1 / l
     ];
 end

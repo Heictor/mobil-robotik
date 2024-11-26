@@ -1,5 +1,6 @@
-function [varargout] = validateTransitionFunction()
 
+function [varargout] = validateTransitionFunction()
+clc
 tolerance = 1e-5;
 success = 1;
 
@@ -8,11 +9,13 @@ load data/validationData.mat
 try
     
     for i = 1:length(transitionData)
-        [x, Fx, Fu] = transitionFunction(transitionData(i).x, transitionData(i).u, transitionParams.b);
-        
+        [x, Fx, Fu] = transitionFunction(transitionData(i).x, transitionData(i).u, transitionParams.b)
+        disp(any(abs(x - transitionData(i).x_priori) > tolerance))
+        disp(any(reshape(abs(Fx - transitionData(i).Fx_priori), [], 1)))
+        disp(any(reshape(abs(Fu - transitionData(i).Fu_priori), [], 1)))
         if any(abs(x - transitionData(i).x_priori) > tolerance) || ...
-                any(reshape(abs(Fx - transitionData(i).Fx_priori), [], 1) > tolerance) || ...
-                any(reshape(abs(Fu - transitionData(i).Fu_priori), [], 1) > tolerance)
+           any(reshape(abs(Fx - transitionData(i).Fx_priori), [], 1) > tolerance) || ...
+           any(reshape(abs(Fu - transitionData(i).Fu_priori), [], 1) > tolerance)
                 success = 0;
                 fprintf('State transition function is incorrect!\n');
                 break;
