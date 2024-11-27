@@ -341,7 +341,6 @@ function J = computeCost(PID, initialBattery, minBattery, target, w1, w2, w3, ti
 
         % PID Control
         controlEffort = abs(P * error) + abs(I * cumulError) + abs(D * (error - lastError) / dt);
-        % disp(sum(controlEffort))
         thrust = P * error + I * cumulError + D * (error - lastError) / dt + V * velocity;
 
         % Update position and velocity (simple dynamics model)
@@ -350,7 +349,7 @@ function J = computeCost(PID, initialBattery, minBattery, target, w1, w2, w3, ti
         position = position + velocity * dt;
 
         % Update battery
-        dischargeRate = 0.1 * sum(abs(controlEffort));
+        dischargeRate = 0.01 + 0.001 * sum(abs(controlEffort));
         battery = battery - dischargeRate * dt;
 
         % Update cumulative cost
