@@ -10,7 +10,10 @@ try
     for i = 1:length(measurementData)
         for j = 1:size(measurementData(i).M, 2)
             [h, Hx] = measurementFunction(measurementData(i).x, measurementData(i).M(:,j));
-            
+            disp("h")
+            disp(h)
+            disp("measurementData(i).h(:,j)")
+            disp(measurementData(i).h(:,j))
             if any(abs(h - measurementData(i).h(:,j)) > tolerance) || ...
                     any(reshape(abs(Hx - measurementData(i).Hx(:,:,j)), [], 1) > tolerance)
                 success = 0;
