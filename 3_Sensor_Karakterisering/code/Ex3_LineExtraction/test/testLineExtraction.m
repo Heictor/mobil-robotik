@@ -11,7 +11,7 @@ params.MIN_SEG_LENGTH = 0.01;
 params.LINE_POINT_DIST_THRESHOLD = 0.005;
 params.MIN_POINTS_PER_SEGMENT = 20;
 
-for testIndex=1:6,
+for testIndex=1:6
     fprintf('Testing laser scan %i: ', testIndex);
     
     load(sprintf('../test/data/testLineExtraction%d', testIndex)); % loads z, R, theta, rho

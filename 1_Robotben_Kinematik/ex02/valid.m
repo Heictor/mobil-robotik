@@ -6,5 +6,4 @@ if(isequal(r_BF_inBx1, eval(subs(r_BF_inB, [alpha beta gamma], q1))) &&...
     disp('CORRECT');
 else
     disp('INCORRECT');
-    
 end
