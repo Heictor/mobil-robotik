@@ -177,6 +177,8 @@ This document outlines the purpose and functionality of each task implemented fo
   - Computes the robot's predicted state (`xt`) and covariance (`Pt`) using the motion model for a differential-drive robot.
   - Models motion noise as Gaussian and calculates Jacobians of the motion model with respect to state and control inputs.
   - Validates the implementation using `validateTransitionFunction()`, which compares the predicted trajectory with ground truth.
+ ![figure1](https://github.com/user-attachments/assets/500b341e-7eb0-4714-8c9a-12df5dfff9c2)
+
 
 ---
 
@@ -213,6 +215,8 @@ This document outlines the purpose and functionality of each task implemented fo
   - Processes laser scan data to refine the robot’s pose incrementally.
   - Combines all previous components to achieve real-time localization in a simulated environment.
   - Validated using the V-REP simulation scene `Exercise4.ttt`. The estimated robot pose is visualized as a yellow ghost near the actual robot.
+![figure2](https://github.com/user-attachments/assets/e54fa0c4-71cc-4be9-b9e9-40b6972d945e)
+
 
 ---
 
