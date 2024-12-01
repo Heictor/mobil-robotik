@@ -6,7 +6,6 @@ This repository is focused on various mobile robotics simulation applications, u
 :sweden: <br>
 Detta förråd är fokuserat på olika mobila robotsimulering applikationer, med hjälp av CoppeliaSim-mjukvaran.
 
-```markdown
 # Overview of Developed Codes in "1_Robotben_Kinematik"
 The following codes collectively simulate and analyze the kinematics of a single robot leg with precision and control.
 ---
@@ -53,7 +52,7 @@ The following codes collectively simulate and analyze the kinematics of a single
   - Exports and plots the desired and actual trajectories, enabling a comparison of the tracking accuracy.
 
 ---
-```
+
 # Overview of Developed Codes in "2_Differential_Drivna_Fordon"
 
 This document outlines the purpose and functionality of each task implemented for the kinematics and control of a differential-drive robot in "Exercise 2."
