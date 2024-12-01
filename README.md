@@ -50,6 +50,8 @@ The following codes collectively simulate and analyze the kinematics of a single
   - Implements a proportional controller to compute the desired Cartesian velocity of the foot point.
   - Uses inverse differential kinematics to calculate joint velocities `[dα, dβ, dγ]` for following a circular trajectory.
   - Exports and plots the desired and actual trajectories, enabling a comparison of the tracking accuracy.
+![csv_trajectoryComparison](https://github.com/user-attachments/assets/148a1982-3d72-4b07-8c3a-bf9a4fb1910c)
+
 
 ---
 
