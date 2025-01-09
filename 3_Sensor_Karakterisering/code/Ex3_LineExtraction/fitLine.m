@@ -15,23 +15,24 @@ function [alpha, r] = fitLine(XY)
 % XY(2,:) contains y position of the points
 
 
-    xc = ###
-    yc = ###
+% Compute the centroid of the point set (xmw, ymw)
+    xc = mean(XY(1, :));
+    yc = mean(XY(2, :));
 
-    % compute parameter alpha (see exercise pages)
-    nom   = ###
-    denom = ###
-    alpha = ###
+% Compute parameter alpha
+    nom = -2 * sum((XY(1, :) - xc) .* (XY(2, :) - yc));
+    denom = sum((XY(2, :) - yc).^2) - sum((XY(1, :) - xc).^2);
+    alpha = 0.5 * atan2(nom, denom);
 
-    % compute parameter r (see exercise pages)
-    r = ###
-
+% Compute parameter r
+    r = xc * cos(alpha) + yc * sin(alpha);
 
 % Eliminate negative radii
-if r < 0,
-    alpha = alpha + pi;
-    if alpha > pi, alpha = alpha - 2 * pi; end
-    r = -r;
-end
-
+    if r < 0
+        alpha = alpha + pi;
+        if alpha > pi
+            alpha = alpha - 2 * pi;
+        end
+        r = -r;
+    end
 end

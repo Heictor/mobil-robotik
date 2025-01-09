@@ -9,7 +9,12 @@ try
     
     for i = 1:length(transitionData)
         [x, Fx, Fu] = transitionFunction(transitionData(i).x, transitionData(i).u, transitionParams.b);
-        
+        x
+        transitionData(i).x_priori
+        Fx
+        transitionData(i).Fx_priori
+        Fu
+        transitionData(i).Fu_priori
         if any(abs(x - transitionData(i).x_priori) > tolerance) || ...
                 any(reshape(abs(Fx - transitionData(i).Fx_priori), [], 1) > tolerance) || ...
                 any(reshape(abs(Fu - transitionData(i).Fu_priori), [], 1) > tolerance)
