@@ -46,6 +46,7 @@
 
 % MATLAB Script to Optimize and Control Drone PID Parameters in CoppeliaSim
 sim.simxFinish(clientID)
+%sim.simxFinish(clientID)
 clear all; close all; clc;
 
 % Connect to CoppeliaSim Remote API
